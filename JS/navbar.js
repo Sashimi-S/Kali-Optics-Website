@@ -1,40 +1,26 @@
+const navContainer = document.getElementById('navbar-container');
+const isPagesDirectory = /\/pages\//i.test(window.location.pathname);
+const pagePrefix = isPagesDirectory ? '../' : './';
+const currentPage = window.location.pathname.split('/').pop().toLowerCase();
 
-(function() {
-    const path = location.pathname.toLowerCase();
-    const inPages = path.includes('/pages/');
+const links = [
+  { label: 'Home', href: 'index.html' },
+  { label: 'Services', href: 'services.html' },
+  { label: 'Reviews', href: 'review.html' },
+  { label: 'Contact', href: 'contact.html' }
+];
 
-    const homeLink = inPages ? '../index.html' : 'index.html';
-    const pageBase = inPages ? './' : 'pages/';
-
-    const navHTML = `
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="${homeLink}">Sashin Sookmungal's Portfolio</a>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="${homeLink}" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="${pageBase}work.html" class="nav-link">Work</a></li>
-                    <li class="nav-item"><a href="${pageBase}gallery.html" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="${pageBase}community.html" class="nav-link">Community</a></li>
-                    <li class="nav-item"><a href="${pageBase}contact.html" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-    `;
-
-    const placeholder = document.getElementById('nav-placeholder');
-    if (placeholder) {
-        placeholder.innerHTML = navHTML;
-    } else {
-        document.body.insertAdjacentHTML('afterbegin', navHTML);
-    }
-
-})();
+navContainer.innerHTML = `
+  <div class="nav-box">
+    <a href="${pagePrefix}index.html" class="nav-logo">
+      <img src="${pagePrefix}images/kali-optics-icon.png" alt="Kali Optics Logo">
+    </a>
+    <ul class="nav-links">
+      ${links.map(({ label, href }) => {
+        const isCurrentPage = currentPage === href || (href === 'index.html' && !currentPage);
+        const linkPath = href === 'index.html' ? `${pagePrefix}index.html` : `${pagePrefix}pages/${href}`;
+        return `<li><a href="${linkPath}"${isCurrentPage ? ' class="active" aria-current="page"' : ''}>${label}</a></li>`;
+      }).join('')}
+    </ul>
+  </div>
+`;

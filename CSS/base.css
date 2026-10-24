@@ -1,0 +1,15 @@
+*{
+    background-color: #222222; 
+}
+
+/* Rajdhani Font */
+body {
+  font-family: 'Rajdhani', sans-serif;
+
+}S
+
+/* Oswald Font */
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff; /* White headings to stand out */
+}

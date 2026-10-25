@@ -23,7 +23,7 @@
 }
 
 .nav-box:hover {
-  box-shadow: 0 0 10px #ff0003, 0 0 20px #ff0003;
+  box-shadow: 0 0 12px #ff0003, 0 0 12px #ff0003;
 }
 
 .nav-box::before { /* Neon beam effect */
@@ -46,7 +46,7 @@
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   filter: drop-shadow(0 0 5px #ff0003); 
-  animation: nav-beam-travel 4s linear infinite;
+  animation: nav-beam-travel 3s linear infinite;
   pointer-events: none;
   z-index: 0;
 }
@@ -109,7 +109,7 @@
 
 
 .nav-links a.active {
-  text-shadow: 0 0 10px #f83200, 0 0 10px #f83200, 0 0 10px #f83200, 0 0 10px #f83200;
+  color: #ff0003;
 }
 
 .nav-toggle {/* Hamburger menu button */
@@ -197,3 +197,14 @@
   }
 }
 
+
+/* Locks the particle canvas to the background */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #222222; 
+  z-index: 1; /* Pushes particles behind everything else */
+}

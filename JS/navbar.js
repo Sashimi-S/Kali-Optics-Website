@@ -1,7 +1,7 @@
 const navContainer = document.getElementById('navbar-container');
-const isPagesDirectory = /\/pages\//i.test(window.location.pathname);
-const pagePrefix = isPagesDirectory ? '../' : './';
-const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+const isPagesDirectory = /\/pages\//i.test(window.location.pathname); // Checks if current page is in the "pages" directory
+const pagePrefix = isPagesDirectory ? '../' : './'; 
+const currentPage = window.location.pathname.split('/').pop().toLowerCase(); 
 
 const links = [
   { label: 'Home', href: 'index.html' },
@@ -15,7 +15,12 @@ navContainer.innerHTML = `
     <a href="${pagePrefix}index.html" class="nav-logo">
       <img src="${pagePrefix}images/kali-optics-icon.png" alt="Kali Optics Logo">
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"> 
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       ${links.map(({ label, href }) => {
         const isCurrentPage = currentPage === href || (href === 'index.html' && !currentPage);
         const linkPath = href === 'index.html' ? `${pagePrefix}index.html` : `${pagePrefix}pages/${href}`;
@@ -24,3 +29,21 @@ navContainer.innerHTML = `
     </ul>
   </div>
 `;
+// Add the neon beam effect to the navigation links
+const navToggle = navContainer.querySelector('.nav-toggle');
+const navBox = navContainer.querySelector('.nav-box');
+// Toggle the navigation menu on button click
+navToggle.addEventListener('click', () => {
+  const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+  navToggle.setAttribute('aria-expanded', String(!isExpanded));
+  navToggle.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+  navBox.classList.toggle('is-open', !isExpanded);
+});
+// Close the navigation menu when a link is clicked
+navContainer.querySelectorAll('.nav-links a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+    navBox.classList.remove('is-open');
+  });
+});

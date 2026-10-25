@@ -8,19 +8,71 @@
   z-index: 100;
 }
 
-.nav-box { 
+.nav-box { /* Navigation box container */
   margin-top: 20px;
   display: flex;
   align-items: center;
+  position: relative;
   border: 2px solid #ff0003;
   border-radius: 22px;
   padding: 10px 40px;
   width: 80%;
   max-width: 1000px;
-
   pointer-events: auto; /* Enable pointer events for the nav-box */
-   
-  
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.nav-box:hover {
+  box-shadow: 0 0 10px #ff0003, 0 0 20px #ff0003;
+}
+
+.nav-box::before { /* Neon beam effect */
+  content: ""; 
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  border-radius: 24px;
+  background: conic-gradient(
+    from var(--nav-beam-angle),
+    transparent 300deg,
+    rgba(255, 0, 3, 0.2) 320deg,
+    #ff0003 340deg,
+    white 350deg,
+    #ff0003 355deg
+  );
+  /* Mask for the neon beam effect */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 5px #ff0003);
+  animation: nav-beam-travel 4s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nav-logo,
+.nav-links {
+  position: relative;
+  z-index: 1;
+}
+
+@property --nav-beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes nav-beam-travel {
+  to {
+    --nav-beam-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-box::before {
+    animation: none;
+  }
 }
 
 .nav-logo img {
@@ -28,10 +80,14 @@
   margin-right: 60px;
   /* align item center vertically */
   display: flex;
-
 }
 
-.nav-links {
+.nav-box:hover .nav-logo img, /* Change logo on hover */
+.nav-box.is-open .nav-logo img {
+  content: url("../images/kali-optics-icon-glow.png");
+}
+
+.nav-links { /* Navigation links container */
   display: flex;
   flex: 1; 
   justify-content: space-evenly;
@@ -40,9 +96,9 @@
   padding: 0;
   gap: 70px;
   
-  /* Make it neon outline when hovered over */
+  /* Makes text neon outline when hovered over */
   :hover {
-    text-shadow: 0 0 10px #ff0003, 0 0 10px #ff0003,0 0 10px #ff0003;
+    text-shadow: 0 0 5px #ff0003, 0 0 5px #ff0003,0 0 5px #ff0003;
     transition: all 0.2s ease-in-out;
   }
 }
@@ -54,5 +110,103 @@
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
+  transition: text-shadow 0.2s ease-in-out;
+}
 
+.nav-links a:active,
+.nav-links a:focus-visible,
+.nav-links a.active {
+  text-shadow: 0 0 5px #ff0003, 0 0 10px #ff0003;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) { /* Mobile styles */
+  .nav-box {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    margin-top: 12px;
+  }
+
+  .nav-box.is-open { 
+    box-shadow: 0 0 10px #ff0003, 0 0 20px #ff0003;
+  }
+
+  .nav-logo img { 
+    height: 52px;
+    margin-right: 0;
+  }
+
+  .nav-toggle { /* Hamburger menu button */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+    border: 1px solid #ff0003;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .nav-toggle span { /* Hamburger menu lines */
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: #EEEEEE;
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+  }
+
+    /* Change hamburger menu lines to red when nav is open */
+  .nav-toggle[aria-expanded="true"] span {
+    background: #ff0003;
+  }
+  .nav-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-toggle:focus-visible { 
+    outline: 2px solid #EEEEEE;
+    outline-offset: 3px;
+  }
+  
+/*////////////////////////////////////////////////////////////////////////*/
+  .nav-links { /* Hide nav links by default on small screens */
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 10px;
+    align-items: center;
+    
+  }
+
+  .nav-box.is-open .nav-links { /* Show nav links when nav-box is open */
+    display: flex;
+  }
+
+  .nav-links a { 
+    display: block;
+    padding: 10px 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle span {
+    transition: none;
+  }
 }

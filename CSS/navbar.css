@@ -164,7 +164,6 @@
     /* Change hamburger menu lines to red when nav is open */
   .nav-toggle[aria-expanded="true"] span {
     background: #eeeeee;
-   
   }
   .nav-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(8px) rotate(45deg);

@@ -45,7 +45,7 @@
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  filter: drop-shadow(0 0 5px #ff0003);
+  filter: drop-shadow(0 0 5px #ff0003); 
   animation: nav-beam-travel 4s linear infinite;
   pointer-events: none;
   z-index: 0;
@@ -57,21 +57,15 @@
   z-index: 1;
 }
 
-@property --nav-beam-angle {
+@property --nav-beam-angle { /* Custom property for the neon beam angle */
   syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
 }
 
-@keyframes nav-beam-travel {
+@keyframes nav-beam-travel { /* Animation for the neon beam effect */
   to {
     --nav-beam-angle: 360deg;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-box::before {
-    animation: none;
   }
 }
 
@@ -98,12 +92,12 @@
   
   /* Makes text neon outline when hovered over */
   :hover {
-    text-shadow: 0 0 5px #ff0003, 0 0 5px #ff0003,0 0 5px #ff0003;
+    text-shadow: 0 0 10px #ff0003, 0 0 10px #ff0003,0 0 10px #ff0003, 0 0 10px #ff0003;
     transition: all 0.2s ease-in-out;
   }
 }
 
-.nav-links a {
+.nav-links a { /* Navigation links */
   text-decoration: none;
   color: #EEEEEE;
   font-family: 'Rajdhani', sans-serif;
@@ -113,16 +107,16 @@
   transition: text-shadow 0.2s ease-in-out;
 }
 
-.nav-links a:active,
-.nav-links a:focus-visible,
+
 .nav-links a.active {
-  text-shadow: 0 0 5px #ff0003, 0 0 10px #ff0003;
+  text-shadow: 0 0 10px #f83200, 0 0 10px #f83200, 0 0 10px #f83200, 0 0 10px #f83200;
 }
 
-.nav-toggle {
+.nav-toggle {/* Hamburger menu button */
   display: none;
 }
 
+/*/////////////////////////Mobile Styles/////////////////////////////////*/
 @media (max-width: 768px) { /* Mobile styles */
   .nav-box {
     flex-wrap: wrap;
@@ -147,8 +141,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
     padding: 9px;
     border: 1px solid #ff0003;
     border-radius: 8px;
@@ -166,9 +160,11 @@
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
   }
 
+  /*//////////////////////////////////////////////////////////////////////////*/
     /* Change hamburger menu lines to red when nav is open */
   .nav-toggle[aria-expanded="true"] span {
-    background: #ff0003;
+    background: #eeeeee;
+   
   }
   .nav-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(8px) rotate(45deg);
@@ -179,13 +175,10 @@
   .nav-toggle[aria-expanded="true"] span:last-child {
     transform: translateY(-8px) rotate(-45deg);
   }
-  .nav-toggle:focus-visible { 
-    outline: 2px solid #EEEEEE;
-    outline-offset: 3px;
-  }
-  
+
 /*////////////////////////////////////////////////////////////////////////*/
-  .nav-links { /* Hide nav links by default on small screens */
+
+  .nav-links { /* Hide nav links */
     display: none;
     flex: 0 0 100%;
     flex-direction: column;
@@ -199,14 +192,9 @@
     display: flex;
   }
 
-  .nav-links a { 
+  .nav-links a {  
     display: block;
     padding: 10px 4px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .nav-toggle span {
-    transition: none;
-  }
-}

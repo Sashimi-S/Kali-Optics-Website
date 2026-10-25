@@ -1,0 +1,24 @@
+
+.logo{
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px; /* Adjust the size as needed */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 2; /* Ensure it appears above the particles */
+
+        /* Zoom-in animation */
+        animation: zoomIn 2s ease-in-out forwards;
+}
+
+/* Locks the particle canvas to the background */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #222222; 
+  z-index: 1; /* Pushes particles behind everything else */
+}

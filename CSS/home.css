@@ -3,13 +3,56 @@
     position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 700px; /* Adjust the size as needed */
+
+        width: 500px; /* Adjust the size as needed */
         height: auto; /* Maintain aspect ratio */
         z-index: 2; /* Ensure it appears above the particles */
 
         /* Zoom-in animation */
         animation: zoomIn 2s ease-in-out forwards;
+}
+
+
+
+.slogan{
+    position: absolute;
+        top: 85%;
+        left: 55%;
+
+        width: 500px; /* Adjust the size as needed */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 2; /* Ensure it appears above the particles */
+
+        
+        font-family: 'Roboto', sans-serif;
+        /* Flash animation from Left to right */
+        animation: leftToRight 0.3s ease-in-out forwards;
+
+      
+       
+}
+
+@keyframes leftToRight {
+  from {
+    transform: translate(-50%, -50%) translateX(-100px);
+    clip-path: inset(0 100% 0 0); /* Start with the text clipped to the left */
+    opacity: 0;
+    filter: brightness(1);
+  }
+  25% {
+    clip-path: inset( 0 0 0);
+    opacity: 1;
+    filter: brightness(0) invert(1);
+  }
+  60% {
+    filter: brightness(0) invert(1);
+  }
+  to {
+    transform: translate(-50%, -50%) translateX(0);
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
 
 /* Locks the particle canvas to the background */

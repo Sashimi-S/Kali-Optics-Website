@@ -36,7 +36,7 @@
   
   padding: 10px 20px;
   border: 3px solid #d80003;
-  border-radius: 22px;
+  border-radius: 50px;
   color: #eeeeee;
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.5rem;
@@ -63,6 +63,28 @@
   background-color: #222222; 
   z-index: 1; /* Pushes particles behind everything else */
 }
+
+.description {
+border-top: 2px solid #ff0003;
+border-bottom: 2px solid #ff0003;
+  max-width: 750px;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+
+  color: #eeeeee;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  font-size: 1.7rem;
+  z-index: 2; /* Ensure it appears above the particles */
+
+}
+
+
 
 /*/////////////////////////Mobile Styling/////////////////////////////////*/
 @media (max-width: 768px) { 

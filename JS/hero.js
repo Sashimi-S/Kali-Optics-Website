@@ -6,7 +6,7 @@ function initializeHeroAnimation() {
       scale: 0,
       opacity: 0,
       duration: 2.2,
-      ease: "back.out(2)"
+      ease: "back.out(0.7)"
     })
     .fromTo(".slogan h1", { /* Animate the slogan text */
       clipPath: "inset(0 100% 0 0)",

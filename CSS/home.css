@@ -1,3 +1,7 @@
+/*Hero (Particles, Logo, Slogan, Download Button)*/
+/*Description, Founders*/
+
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -7,9 +11,9 @@
 .logo{
     position: absolute;
         top: 50%;
-        left: 50%;
+        left: 45%;
         transform: translate(-50%, -50%);
-
+        
         width: 500px; 
         height: auto; 
         z-index: 2; /* Ensure it appears above the particles */
@@ -32,8 +36,8 @@
 .profile-download { /* Download button styling */
   display: block;
   position: absolute;
-  top: 170%;
-  left: 35%;
+  top: 190%;
+  left: 35.5%;
   transform: translate(-50%, -50%);
   z-index: 2;
   margin-top: 0;
@@ -63,7 +67,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 115vh;
   background-color: #222222; 
   z-index: 1; /* Pushes particles behind everything else */
 }
@@ -123,22 +127,24 @@
 /*/////////////////////////Mobile Styling/////////////////////////////////*/
 @media (max-width: 768px) { 
   .hero {
-    min-height: 100svh;
+    min-height: 55svh;
     
+     
   }
 
   #particles-js {
-    height: 100svh;
+    height: 67svh;
   }
 
   .logo {
-    top: 32%;
-    width: 88vw;
+    top: 48%;
+    left: 50%;
+    width: 77vw;
     max-width: 420px;
   }
 
   .slogan {
-    top: 55%;
+    top: 91%;
     left: 50%;
     width: 92vw;
     max-width: 500px;
@@ -149,8 +155,8 @@
   .slogan h1 {
     margin: 0;
     font-size: clamp(1rem, 6vw, 2.4rem);
-    line-height: 1.15;
-    overflow-wrap: anywhere; /* Ensures long words break to fit smaller screens */
+    line-height: 1.15;/
+    
   }
 
   .profile-download {
@@ -160,18 +166,16 @@
     display: inline-block;
     max-width: 100%;
     box-sizing: border-box; 
-    margin-top: 2rem;
+    margin-top: 5rem;
     padding: 7px 15px;
     transform: none;
     font-size: clamp(1.25rem, 4vw, 1.25rem);
     z-index: 1;
 
-
   }
 
   .description {
     width: calc(100% - 32px);
- 
     font-size: 1.25rem;
 
   }

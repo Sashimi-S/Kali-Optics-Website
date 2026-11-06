@@ -69,15 +69,15 @@ particlesJS('particles-js',
       },
       "move": {
         "enable": true,
-        "speed": 6,
+        "speed": 1, 
         "direction": "none",
         "random": false,
         "straight": false,
         "out_mode": "out",
         "attract": {
           "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
+          "rotateX": 100,
+          "rotateY": 200,
         }
       }
     },
@@ -103,7 +103,7 @@ particlesJS('particles-js',
         },
         "bubble": {
           "distance": 400,
-          "size": 40,
+          "size": 30,
           "duration": 2,
           "opacity": 8,
           "speed": 3

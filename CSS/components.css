@@ -109,7 +109,7 @@
   transition: text-shadow 0.2s ease-in-out;
 }
 
-
+/* Colour select on nav*/
 .nav-links a.active {
   color: #ff0003;
 }
@@ -162,8 +162,8 @@
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
   }
 
-  /*//////////////////////////////////////////////////////////////////////////*/
-    /* Change hamburger menu lines to red when nav is open */
+/*//////////////////////////////////////////////////////////////////////////*/
+
   .nav-toggle[aria-expanded="true"] span {
     background: #eeeeee;
   }
@@ -178,15 +178,13 @@
   }
 
 /*////////////////////////////////////////////////////////////////////////*/
-
   .nav-links { /* Hide nav links */
     display: none;
     flex: 0 0 100%;
     flex-direction: column;
     gap: 0;
     padding-top: 10px;
-    align-items: center;
-    
+    align-items: center; 
   }
 
   .nav-box.is-open .nav-links { /* Show nav links when nav-box is open */

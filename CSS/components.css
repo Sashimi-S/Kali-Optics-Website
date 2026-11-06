@@ -39,7 +39,7 @@
     rgba(255, 0, 3, 0.2) 320deg,
     #ff0003 340deg,
     white 350deg,
-    #ff0003 355deg
+    #ff0003 360deg
   );
   /* Mask for the neon beam effect */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

@@ -139,7 +139,7 @@
   color: #eeeeee;
   font-family: 'Rajdhani', sans-serif;
   font-weight: bold;
-  font-size: clamp(1.5rem, 4vw, 1.75rem);
+  font-size: 1.5rem;
   z-index: 2;
 }
 

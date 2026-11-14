@@ -17,8 +17,7 @@
     <!-- Leaflet Map CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <nav id="navbar-container"></nav>
-    <script src="JS/navbar.js"></script>
+  
     <script src="JS/scrollbar.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="JS/hero.js"></script>
@@ -29,9 +28,12 @@
 
 
 <body>
+    <nav id="navbar-container"></nav>
+    <script src="JS/navbar.js"></script>
   
   <main>
 
+    
     <!-- Hero Section -->
     <section class="hero">
       <div id="particles-js">
@@ -73,19 +75,14 @@
 <!-- Map Section-->
     <section class = "map-section"> 
         <h2 class="headings">Projects We Have Completed</h2>
-       
-        <!-- Wrapper holds both the status overlay and the map -->
         <div class="map-wrapper">
-        
-        <!-- API Status Box (Loading / Error / Empty states) -->
+        <!-- API Status Box -->
         <div id="map-status" class="map-status">Loading Completed Projects...</div>
-    
-        <!-- The actual Leaflet map canvas -->
+        <!-- Leaflet map canvas -->
         <div id="kali-map"></div>
-
         <!-- Leaflet JS Library -->
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <!-- Your Custom Map Script -->
+
         <script src="js/map.js"></script>
 
         </div>

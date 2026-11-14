@@ -1,6 +1,6 @@
 //API Endpoints and Keys
-const GEOAPIFY_KEY = "2d65ae4a464c4047874b0ddb4344c296"; 
-const JSONBIN_URL = "https://api.jsonbin.io/v3/b/6aef2168ac6210605a753997/latest"; 
+// const GEOAPIFY_KEY = "2d65ae4a464c4047874b0ddb4344c296"; 
+// const JSONBIN_URL = "https://api.jsonbin.io/v3/b/6aef2168ac6210605a753997/latest"; 
 
 const statusBox = document.getElementById("map-status");
 

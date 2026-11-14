@@ -1,0 +1,116 @@
+
+body {
+  margin: 0;
+  background-color: #222222;
+  color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contact-container {
+  width: min(460px, calc(100% - 40px));
+  margin: 5rem auto 4rem;
+  text-align: center;
+  flex: 1;
+}
+
+.contact-container h1 {
+  display: inline-block;
+  margin: 0 0 2.5rem;
+  padding: 0 15px 6px;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(4rem, 5vw, 2.8rem);
+  color: #eeeeee;
+  -webkit-text-stroke: 1.5px #d80003;
+  border-bottom: 3px solid #ff0003;
+  margin-top: 5rem;
+}
+
+/* Spacing between each input box */
+.form-group {
+  margin-bottom: 2rem;
+}
+
+/* Inputs and the message box */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 18px;
+  background-color: #eeeeee;
+  color: #222222;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #ff0003;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(255, 0, 3, 0.75);
+  outline: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Placeholder text */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #222222;
+  opacity: 0.9;
+}
+
+/* Prevents user from dragging the textarea wider than the page */
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Stronger neon glow when the user clicks inside an input */
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 16px 4px rgba(255, 0, 3, 0.95);
+}
+
+/* Button*/
+.btn-send {
+  margin-top: 0.5rem;
+  padding: 12px 50px;
+  background-color: #d80003;
+  color: #eeeeee;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 2px solid #ff0003;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-send:hover,
+.btn-send:focus-visible {
+  background-color: #ff0003;
+  box-shadow: 0 0 12px 3px rgba(255, 0, 3, 0.75);
+  transform: translateY(-2px);
+}
+
+
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 2rem auto 3rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.3rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .btn-send {
+    padding: 10px 40px;
+    font-size: 1.25rem;
+  }
+}

@@ -1,6 +1,6 @@
-.headings {
-    
-  color: #eeeeee;
+.services-container h1 {
+  margin-top:7 rem;
+  color: #000000;
   font-size: 9 rem;
   text-align: center;
   font-family: 'Oswald', sans-serif;
@@ -8,4 +8,4 @@
   -webkit-text-stroke: 1.5px #D80003;
    
 
-}
+}s

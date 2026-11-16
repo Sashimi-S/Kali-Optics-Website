@@ -142,11 +142,7 @@
 
 
 
-
-
-
-
-
+/*Map*/
 .map-section {
   width: min(1000px, calc(100% - 32px));
   margin: 4rem auto;
@@ -240,7 +236,6 @@
 }
 
 
-
 /* Footer Styling*/
 .site-footer {
   background-color: #d80003;
@@ -257,9 +252,7 @@
 }
 
 
-
-
-/*/////////////////////////Mobile Styling/////////////////////////////////*/
+/*Mobile Styling*/
 @media (max-width: 768px) { 
   .hero {
     min-height: 55svh;  

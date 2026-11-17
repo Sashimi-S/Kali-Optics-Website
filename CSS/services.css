@@ -101,7 +101,7 @@ body {
     margin-bottom: 3.5rem; 
   }
 
-  /* Keeps the image above the paragraph on mobile for every card */
+  /* Keeps the image above paragraph*/
   .service-image {
     order: 2;
     max-width: 240px;

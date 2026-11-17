@@ -14,12 +14,75 @@
     <link rel="stylesheet" href="../CSS/review.css">
     
     <script src="../JS/scrollbar.js" defer></script>
+   
 </head>
-
-
 
 <body>
     <nav id="navbar-container"></nav>
     <script src="../JS/navbar.js" defer></script>
+    <script src="../JS/reviews.js" defer></script>
+
+    <main class="reviews-page">
+        <!-- Review Button -->
+        <div class="reviews-header">
+            <button id="open-review-btn" class="btn-primary">Leave a Review</button>
+        </div>
+
+        <!-- Reviews Grid-->
+        <div id="reviews-grid" class="reviews-grid">
+            
+            <!-- Sample Review 1  -->
+            <div class="review-card">
+                <h3 class="reviewer-name">Sarah Jenkins</h3>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">
+                    Flawless FTTB deployment for our new office park. The team was professional, clean, and finished ahead of schedule.
+                </p>
+            </div>
+
+            <!-- Sample Review 2 -->
+            <div class="review-card">
+                <h3 class="reviewer-name">Sipho Ndlovu</h3>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">
+                    Kali Optics handled the civil works and trenching with incredible precision. There was very minimal disruption to our estate.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- "Leave a Review" Modal Overlay -->
+    <div id="review-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">X</button>
+            <form id="review-form">
+                <div class="form-group">
+                    <input type="text" id="reviewer-name" placeholder="Name" required>
+                </div>
+                
+                <!-- Interactive Star Rating Container -->
+                <div class="star-rating" id="star-rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="reviewer-comment" rows="5" placeholder="Comment" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary submit-review-btn">Post Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Kali Optics. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

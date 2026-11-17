@@ -101,8 +101,6 @@ body {
     margin-bottom: 3.5rem; 
   }
 
-  .services-container h1 {
-  }
   /* Keeps the image above the paragraph on mobile for every card */
   .service-image {
     order: 2;

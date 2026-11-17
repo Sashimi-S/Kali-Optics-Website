@@ -99,13 +99,14 @@
   grid-column: 1 / -1;
   margin: 0;
   color: #eeeeee;
-  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-size: clamp(3.5rem, 5vw, 3rem);
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  -webkit-text-stroke: 1.5px #D80003; 
+  -webkit-text-stroke: 1.7px #D80003; 
+
   /* text-decoration: underline;
-  text-decoration-color: #D80003;
-  text-decoration-thickness: 2px; */
+  text-decoration-color: #D80003;;
+  text-decoration-thickness: 2px;  */
 }
 
 .founder-photo {
@@ -301,6 +302,12 @@
   .description {
     width: calc(100% - 32px);
     font-size: 1.25rem;
+  }
+
+  .headings
+  {
+    font-size: 1.75rem;
+    -webkit-text-stroke: 1px #D80003; 
   }
 
   .founders {

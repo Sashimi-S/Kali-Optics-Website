@@ -18,7 +18,7 @@ serviceCards.forEach((card) => {
       scrollTrigger: {
         trigger: card,
         start: "top 80%", // Starts when the top of the card hits 80% of the screen height
-        toggleActions: "play none none reverse" // Plays on scroll down, reverses cleanly if scrolled back up
+        toggleActions: "play none none reverse" // Plays on scroll down, reverses if scrolled back up
       }
     }
   );

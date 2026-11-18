@@ -20,7 +20,7 @@
   width: 80%;
   max-width: 1000px;
   pointer-events: auto; /* Enable pointer events for the nav-box */
-  transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.s ease-in-out;
 }
 
 .nav-box:hover {
@@ -60,7 +60,7 @@
 
 @property --nav-beam-angle { /* Custom property for the neon beam angle */
   syntax: "<angle>";
-  inherits: false;
+  inherits: true;
   initial-value: 0deg;
 }
 

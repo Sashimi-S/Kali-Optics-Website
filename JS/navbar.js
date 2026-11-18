@@ -29,9 +29,11 @@ navContainer.innerHTML = `
     </ul>
   </div>
 `;
+
 // Add the neon beam effect to the navigation links
 const navToggle = navContainer.querySelector('.nav-toggle');
 const navBox = navContainer.querySelector('.nav-box');
+
 // Toggle the navigation menu on button click
 navToggle.addEventListener('click', () => {
   const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -39,6 +41,7 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
   navBox.classList.toggle('is-open', !isExpanded);
 });
+
 // Close the navigation menu when a link is clicked
 navContainer.querySelectorAll('.nav-links a').forEach((link) => {
   link.addEventListener('click', () => {

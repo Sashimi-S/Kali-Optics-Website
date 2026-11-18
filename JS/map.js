@@ -67,9 +67,12 @@ async function loadNetworkLocations() {
     console.error("Map API Error:", error);
     statusBox.innerHTML = `
       <div>
-        <p>Unable to load network locations right now.</p>
-        <button onclick="loadNetworkLocations()" class="retry-btn">Try Again</button>
-      </div>
+       <svg class="wifi-loader" viewBox="0 0 120 100" style="width: 70px; height: 60px;">
+      <path class="wifi-bar wifi-bar-3" d="M 12 42 A 68 68 0 0 1 108 42" />
+      <path class="wifi-bar wifi-bar-2" d="M 28 60 A 45 45 0 0 1 92 60" />
+      <path class="wifi-bar wifi-bar-1" d="M 60 92 L 42 74 A 25 25 0 0 1 78 74 Z" />
+    </svg>
+    <p style="margin-top: 8px;">Loading live network locations...</p>
     `;
   }
 }

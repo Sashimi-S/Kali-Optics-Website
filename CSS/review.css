@@ -62,7 +62,9 @@ body {
     align-items: center;
     text-align: center;
     height: 250px; /* Card Height*/
-    
+    min-width: 0; /* Prevents grid blowout */
+    box-sizing: border-box;
+    overflow: hidden;
     position: relative;
 }
 
@@ -77,6 +79,11 @@ body {
     padding: 5px 20px;
     border-radius: 20px;
     border: 1px solid #ff0003; 
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /*Stars*/
@@ -93,14 +100,16 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     color: #cccccc;
+    overflow-wrap: break-word; /* Breaks long words onto the next line */
+    word-break: break-word;
 
     /* Capps the text to 5 lines */
-    line-clamp: 5; 
-    display: -webkit-box;
+   display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
 /* The Delete Button (shows on user's own review) */
 .delete-review-btn {
     position: absolute;

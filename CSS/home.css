@@ -130,7 +130,7 @@
   padding: 1rem 1.25rem;
   border-left: 2px solid #ff0003;
   border-right: 2px solid #ff0003;
-
+  margin-bottom:5rem;
   text-align: center;
   color: #eeeeee;
   font-family: 'Rajdhani', sans-serif;
@@ -334,6 +334,7 @@
     width: calc(100% - 32px);
     font-size: 1.1rem;
     justify-content: center; 
+    margin-bottom: 0rem;;
   }
 }
 

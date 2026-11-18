@@ -1,4 +1,4 @@
-/* Navbar Styles */
+/* Navbar Styling */
 #navbar-container { 
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
   width: 80%;
   max-width: 1000px;
   pointer-events: auto; /* Enable pointer events for the nav-box */
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 .nav-box:hover {
@@ -116,6 +116,78 @@
 
 .nav-toggle {/* Hamburger menu button */
   display: none;
+}
+
+
+/*Scrollbar Styling*/
+/*Hide default browser scrollbar */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Rihgt side scrollbar container */
+.custom-scrollbar {
+  position: fixed;
+  top: 15vh;
+  right: 22px;
+  height: 70vh;
+  width: 24px;
+  z-index: 999;
+  pointer-events: none; /* Lets users click page content underneath */
+}
+
+/* Scrollbar Line */
+.scrollbar-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  /* When stopped, the line retracts back into the ball */
+  opacity: 0;
+  transform: translateX(-50%) scaleY(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Scrollbar ball */
+.scrollbar-ball {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  transition: box-shadow 0.6s ease, background-color 0.4s ease;
+}
+
+/* While Scrolling: Line expands & ball glow intensifies */
+.custom-scrollbar.is-scrolling .scrollbar-line {
+  opacity: 1;
+  transform: translateX(-50%) scaleY(1);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.custom-scrollbar.is-scrolling .scrollbar-ball {
+  background-color: #ffffff;
+  box-shadow:
+    0 0 15px 7px rgba(255, 255, 255, 0.9);
+
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hide the custom scrollbar on mobile */
+@media (max-width: 768px) {
+  .custom-scrollbar {
+    display: none !important;
+  }
 }
 
 /*/////////////////////////Mobile Styles/////////////////////////////////*/

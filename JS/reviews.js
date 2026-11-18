@@ -134,7 +134,7 @@ async function saveReviewsToCloud(updatedReviews) {
     });
 
     if (!response.ok) {
-        throw new Error('Failed to save review to JSONBin');
+        throw new Error('Failed to save review');
     }
 }
 

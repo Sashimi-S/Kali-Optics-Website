@@ -1,6 +1,6 @@
-const BIN_ID = '6afdc1eeffd5d16053cbbbf5';
-const API_KEY = '$2a$10$uFzTET.OEFVO3mbhnCBRB.bobw0u5KWkZdP0Ty4ifu3XdYACa/YfG';
-const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+// const BIN_ID = '6afdc1eeffd5d16053cbbbf5';
+// const API_KEY = '$2a$10$uFzTET.OEFVO3mbhnCBRB.bobw0u5KWkZdP0Ty4ifu3XdYACa/YfG';
+// const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
 
 const openBtn = document.getElementById('open-review-btn');

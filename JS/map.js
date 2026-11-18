@@ -16,7 +16,7 @@ L.tileLayer(
   }
 ).addTo(map);
 
-//Custom Kali Optics map icons
+//Custom map icons
 const kaliIcon = L.icon({
   iconUrl: "images/map-icon.png", 
   iconSize: [38, 38],     

@@ -13,7 +13,7 @@
         transform: translate(-50%, -50%);
         width: 500px; 
         height: auto; 
-        z-index: 2; /* Ensure it appears above the particles */
+        z-index: 2; /* Layer over particles */
 }
 
 .slogan{
@@ -62,7 +62,7 @@
   width: 100%;
   height: 115vh;
   background-color: #222222; 
-  z-index: 1; /* Pushes particles behind everything else */
+  z-index: 1; 
 }
 
 .description {
@@ -102,9 +102,10 @@
   font-family: 'Oswald', sans-serif;
   -webkit-text-stroke: 1.7px #D80003; 
 
-  /* text-decoration: underline;
+  text-decoration: underline;
   text-decoration-color: #D80003;;
-  text-decoration-thickness: 2px;  */
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
 }
 
 .founder-photo {
@@ -138,9 +139,6 @@
 }
 
 
-
-
-
 /*Map*/
 .map-section {
   width: min(1000px, calc(100% - 32px));
@@ -156,6 +154,7 @@
   box-shadow: 0 0 12px 3px rgba(255, 0, 3, 0.75);
   overflow: hidden; /* Clips map corners to match the 25px border-radius */
   background-color: #1a1b1f;
+   margin-top: 3.2rem ;
 }
 
 #kali-map {
@@ -234,6 +233,11 @@
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  #kali-map {
+    height: 340px; 
+  }
+}
 
 /* Footer Styling*/
 .site-footer {
@@ -333,12 +337,5 @@
     font-size: 1.1rem;
     justify-content: center; 
     margin-bottom: 0rem;;
-  }
-}
-
-
-@media (max-width: 768px) {
-  #kali-map {
-    height: 340px; 
   }
 }

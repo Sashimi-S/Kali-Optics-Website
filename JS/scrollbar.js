@@ -52,7 +52,7 @@ window.addEventListener("scroll", () => {
   // Reset the timer every time the user moves the scroll wheel
   clearTimeout(scrollTimer);
 
-  // Wait 700ms after scrolling stops, then fade the glow and pull the line back in
+  // Wait after scrolling stops, then fade the glow and pull the line back in
   scrollTimer = setTimeout(() => {
     scrollbar.classList.remove("is-scrolling");
   }, 700);

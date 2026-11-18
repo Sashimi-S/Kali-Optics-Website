@@ -72,7 +72,6 @@ async function loadReviews() {
             throw new Error(`HTTP ${response.status}: ${data.message || 'Request failed'}`);
         }
 
-        // Safely handle either a direct array [...] or an object like { reviews: [...] }
         allReviews = data.record;
 
         statusText.style.display = 'none';
@@ -214,6 +213,5 @@ async function deleteUserReview(reviewId) {
         statusText.textContent = 'Could not delete review. Please try again.';
     }
 }
-
 // Loading reviews when page opens
 loadReviews();

@@ -30,7 +30,7 @@ navContainer.innerHTML = `
   </div>
 `;
 
-// Add the neon beam effect to the navigation links
+// Add the neon beam effect to the nav
 const navToggle = navContainer.querySelector('.nav-toggle');
 const navBox = navContainer.querySelector('.nav-box');
 

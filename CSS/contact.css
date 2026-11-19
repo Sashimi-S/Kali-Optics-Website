@@ -107,7 +107,7 @@ body {
 /* Mobile Responsive*/
 @media (max-width: 768px) {
   .contact-container {
-    margin: 7rem auto 3rem;
+    margin: 7.7rem auto 3rem;
   }
 
   .form-group {
@@ -121,6 +121,7 @@ body {
   }
 
   .btn-send {
+    margin-top: 2rem;
     padding: 10px 40px;
     font-size: 1.25rem;
   }

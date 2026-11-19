@@ -63,7 +63,7 @@ async function loadNetworkLocations() {
     statusBox.classList.add("hidden");
 
   } catch (error) {
-    // ERROR STATE: Show a helpful message if Wi-Fi drops or the API is down
+    // Error State:
     console.error("Map API Error:", error);
     statusBox.innerHTML = `
       <div>

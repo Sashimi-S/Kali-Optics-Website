@@ -2,13 +2,13 @@ function initializeHeroAnimation() {
   const heroTimeline = gsap.timeline();
 
   heroTimeline
-    .from(".logo", { /* Animate the logo */
+    .from(".logo", { /* Logo */
       scale: 0,
       opacity: 0,
       duration: 2.2,
       ease: "back.out(0.7)"
     })
-    .fromTo(".slogan h1", { /* Animate the slogan text */
+    .fromTo(".slogan h1", { /* Slogan Text */
       clipPath: "inset(0 100% 0 0)",
       textShadow: "0 0 14px rgba(255, 255, 255, 0.9)"
     }, {
@@ -16,9 +16,9 @@ function initializeHeroAnimation() {
       duration: 0.2,
       ease: "power1.inOut"
     })
-    .to(".slogan h1", { /* Animate the text shadow to fade out */
+    .to(".slogan h1", { /* Animates the text shadow to fade out */
       textShadow: "0 0 0 rgba(255, 255, 255, 0)",
-      duration: 0.2,
+      duration: 0.25,
       ease: "power1.out" 
     });
 }

@@ -19,7 +19,7 @@
   padding: 10px 70px;
   width: 80%;
   max-width: 1000px;
-  pointer-events: auto; /* Enable pointer events the nav-box */
+  pointer-events: auto; /* Enable pointer to nav-box */
   transition: box-shadow 0.s ease-in-out;
 }
 
@@ -92,7 +92,7 @@
   padding: 0;
   gap: 70px;
   
-  /* Makes text neon outline when hovered over */
+  /* Hovered neon text outline */
   :hover {
     text-shadow: 0 0 10px #ff0003, 0 0 10px #ff0003,0 0 10px #ff0003, 0 0 10px #ff0003;
     transition: all 0.2s ease-in-out;
@@ -114,14 +114,14 @@
   color: #ff0003;
 }
 
-.nav-toggle {/* Hamburger menu button */
+.nav-toggle {
   display: none;
 }
 
 
 /*/////////////Scrollbar Styling//////////////////*/
-/*Hide default browser scrollbar */
-html {
+
+html {/*Hide default browser scrollbar */
   scrollbar-width: none;
 }
 
@@ -129,15 +129,15 @@ html::-webkit-scrollbar {
   display: none; 
 }
 
-/* Rihgt side scrollbar container */
+/* Right side scrollbar container */
 .custom-scrollbar {
   position: fixed;
   top: 15vh;
-  right: 22px;
+  right: 12.7px;
   height: 70vh;
   width: 24px;
   z-index: 999;
-  pointer-events: none; /* Lets users click page content underneath */
+  pointer-events: none; /* Lets user click page content underneath */
 }
 
 /* Scrollbar Line */
@@ -149,7 +149,7 @@ html::-webkit-scrollbar {
   width: 2px;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 2px;
-  /* When stopped, the line retracts back into the ball */
+  /* Stopped: Line retracts back into ball */
   opacity: 0;
   transform: translateX(-50%) scaleY(0);
   transition: transform 0.8s ease, opacity 0.8s ease;
@@ -169,7 +169,7 @@ html::-webkit-scrollbar {
   transition: box-shadow 0.6s ease, background-color 0.4s ease;
 }
 
-/* While Scrolling: Line expands & ball glow intensifies */
+/* Scrolling: Line expands & ball glow intensifies */
 .custom-scrollbar.is-scrolling .scrollbar-line {
   opacity: 1;
   transform: translateX(-50%) scaleY(1);
@@ -183,7 +183,7 @@ html::-webkit-scrollbar {
   transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-/* Hide the custom scrollbar on mobile */
+/* Hides scrollbar on mobile */
 @media (max-width: 768px) {
   .custom-scrollbar {
     display: none !important;
@@ -276,8 +276,8 @@ html::-webkit-scrollbar {
 }
 
 
-/*/////////////////////////Mobile Styles/////////////////////////////////*/
-@media (max-width: 768px) { /* Mobile styles */
+/*////////////Mobile Styles///////////////*/
+@media (max-width: 768px) { 
   .nav-box {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -320,8 +320,6 @@ html::-webkit-scrollbar {
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
   }
 
-/*//////////////////////////////////////////////////////////////////////////*/
-
   .nav-toggle[aria-expanded="true"] span {
     background: #eeeeee;
   }
@@ -335,7 +333,7 @@ html::-webkit-scrollbar {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-/*////////////////////////////////////////////////////////////////////////*/
+
   .nav-links { /* Hide nav links */
     display: none;
     flex: 0 0 100%;

@@ -11,31 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Rajdhani:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     
+     <!--Leaflet Map CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/components.css">
     <link rel="stylesheet" href="CSS/home.css">
-    <!--Leaflet Map CSS-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!--Libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="JS/particles.js-master/particles.js" defer></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="JS/navbar.js" defer></script>
     <script src="JS/scrollbar.js" defer></script>
     <script src="JS/hero.js" defer></script>
     <script src="JS/loader.js" defer></script>
-
-        <!-- Hero Section -->
-    <section class="hero">
-      <div id="particles-js">
-        <script src="JS/particles.js-master/particles.js" defer></script>
-        <script src="JS/app.js" defer></script>
-      </div>
+    <script src="JS/app.js" defer></script>
+    <script src="js/map.js" defer></script> 
 </head>
 
 
 <body>
     <nav id="navbar-container"></nav>
   <main>
-        <!-- Logo -->
+        <!-- Hero Section -->
+        <section class="hero">
+            <div id="particles-js"></div>
+            <!-- Logo -->
         <img src="images/Kali-Optics-Logo.png" alt="Kali Optics Logo" class="logo">
         <!-- Slogan -->
         <div class="slogan">
@@ -71,15 +74,10 @@
     <section class = "map-section"> 
         <h2 class="headings">Projects We Have Completed</h2>
         <div class="map-wrapper">
-        <!-- API Status Box -->
-        <div id="map-status" class="map-status">Loading Completed Projects...</div>
-        <!-- Leaflet map canvas -->
-        <div id="kali-map"></div>
-        <!-- Leaflet JS Library -->
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-        <script src="js/map.js"></script>
-
+            <!-- API Status Box -->
+            <div id="map-status" class="map-status">Loading Completed Projects...</div>
+            <!-- Leaflet map canvas -->
+            <div id="kali-map"></div>
         </div>
     </section>
   </main>

@@ -15,9 +15,8 @@ document.body.appendChild(scrollbar);
 
 let scrollTimer; // Tracks when user stops scrolling
 
-// Calculates scroll position and moves the ball
+// Do nothing on mobile screens
 function updateScrollbar() {
-  // Do nothing on mobile screens
   if (window.innerWidth <= 768) {
     scrollbar.style.display = "none";
     return;
@@ -38,7 +37,7 @@ function updateScrollbar() {
   const scrollPercent = (scrollTop / maxScroll) * 100;
   // Moves the ball down the track
   ball.style.top = `${scrollPercent}%`;
-  // Anchor the line to the ball's exact height so it retracts right into it
+  // Anchor the line to the ball's exact height so it retracts into it
   line.style.transformOrigin = `center ${scrollPercent}%`;
 }
 

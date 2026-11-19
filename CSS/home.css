@@ -216,8 +216,8 @@
   background-color: #ff0003;
 }
 
-#kali-map.leaflet-tile-pane {
-  filter: brightness(0.5) contrast(1.1);
+#kali-map .leaflet-tile-pane {
+  filter: brightness(0.9) contrast(1.1);
 }
 
 /* Bottom Rifght Attribution*/

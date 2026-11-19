@@ -67,6 +67,7 @@ body {
     overflow: hidden;
     position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 1.7rem;
 }
 
 .review-card:hover {

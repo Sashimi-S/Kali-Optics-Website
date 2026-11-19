@@ -137,7 +137,8 @@ html::-webkit-scrollbar {
   height: 70vh;
   width: 24px;
   z-index: 999;
-  pointer-events: none; /* Lets user click page content underneath */
+  pointer-events: auto; 
+  cursor: pointer;
 }
 
 /* Scrollbar Line */

@@ -4,40 +4,42 @@
   position: relative;
   min-height: 100vh;
   isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px; 
+    position: relative;
+    display: block;
+    margin-top: 12rem;
+    width: min(500px, 85vw);
     height: auto; 
     z-index: 2; /* Layer over particles */
 }
 
 .slogan{
-    position: absolute;
-    top: 85.5%;
-    left: 55%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 500px; 
+    margin-top: 1.2rem;
+    width: min(550px, 90vw);
     height: auto; 
-    z-index: 1;
+    z-index: 3;
     font-family: 'Roboto', sans-serif;
 }
 
 .profile-download { /* Download button styling */
-  display: block;
-  position: absolute;
-  top: 180%;
-  left: 35.8%;
-  transform: translate(-50%, -50%);
+  display: inline-block;
+  position: relative;
+  
   z-index: 2;
-  margin-top: 0;
+  margin-top: 2rem;
   padding: 10px 20px;
   border: 3px solid #d80003;
+  background-color: #131313c2;
   border-radius: 50px;
   color: #eeeeee;
   font-family: 'Rajdhani', sans-serif;
@@ -56,13 +58,14 @@
 
 /* Locks the particle canvas to the background */
 #particles-js {
-  position: absolute;
+position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 115vh;
-  background-color: #222222; 
-  z-index: 1; 
+  width: 112%;
+  height: 112%;
+  min-height: 115vh;
+  background-color: #222222;
+  z-index: 1;
 }
 
 .description {
@@ -148,13 +151,14 @@
 /* Holds the map and loading/error message */
 .map-wrapper {
   position: relative;
-  margin-top: 2rem;
+ 
   border: 3px solid #ff0003;
   border-radius: 25px;
   box-shadow: 0 0 12px 3px rgba(255, 0, 3, 0.75);
   overflow: hidden; /* Clips map corners*/
   background-color: #1a1b1f;
-   margin-top: 3.2rem ;
+  margin-top: 3.2rem ;
+  margin-bottom: 7rem 
 }
 
 #kali-map {
@@ -259,44 +263,38 @@
 /*Mobile Styling*/
 @media (max-width: 768px) { 
   .hero {
-    min-height: 55svh;  
+    min-height: 67svh;  
   }
 
   #particles-js {
-    height: 67svh;
+    width: 100%;
+    height: 112%;
+    min-height: 67svh;
   }
 
   .logo {
-    top: 50%;
-    left: 50%;
-    width: 77vw;
-    max-width: 420px;
+    width: min(77vw, 460px);
   }
 
   .slogan {
-    top: 95%;
-    left: 50%;
     width: 92vw;
     max-width: 500px;
     box-sizing: border-box;
     text-align: center;
+    z-index: 3;
   }
 
   .slogan h1 {
     margin: 0;
-    font-size: clamp(1rem, 6vw, 2.4rem);
-    line-height: 1.15;/
+    font-size: clamp(1.2rem, 6vw, 2.2rem);
+    line-height: 2;
   }
 
   .profile-download {
-    position: relative;
-    top: auto;
-    left: auto;
-    display: inline-block;
     max-width: 100%;
     box-sizing: border-box; 
     margin-top: 5rem;
-    padding: 7px 15px;
+    padding: 12px 15px;
     transform: none;
     font-size: clamp(1.25rem, 4vw, 1.25rem);
     z-index: 1;
@@ -338,5 +336,8 @@
     font-size: 1.1rem;
     justify-content: center; 
     margin-bottom: 0rem;;
+  }
+  .map-wrapper{
+    margin-bottom: 4rem;
   }
 }

@@ -137,8 +137,7 @@ html::-webkit-scrollbar {
   height: 70vh;
   width: 24px;
   z-index: 999;
-  pointer-events: auto; /* Lets user click page content underneath */
-  cursor: pointer;
+  pointer-events: none; /* Lets user click page content underneath */
 }
 
 /* Scrollbar Line */
@@ -168,31 +167,20 @@ html::-webkit-scrollbar {
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   transition: box-shadow 0.6s ease, background-color 0.4s ease;
-  cursor: grab;
 }
 
 /* Scrolling: Line expands & ball glow intensifies */
-.custom-scrollbar.is-scrolling .scrollbar-line,
-.custom-scrollbar:hover .scrollbar-line,
-.custom-scrollbar.is-dragging .scrollbar-line{
+.custom-scrollbar.is-scrolling .scrollbar-line {
   opacity: 1;
   transform: translateX(-50%) scaleY(1);
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
-
-.custom-scrollbar.is-scrolling .scrollbar-ball,
-.custom-scrollbar:hover .scrollbar-ball,
-.custom-scrollbar.is-dragging .scrollbar-ball{
+.custom-scrollbar.is-scrolling .scrollbar-ball {
   background-color: #ffffff;
   box-shadow:
     0 0 15px 7px rgba(255, 255, 255, 0.9);
-  transition: box-shadow 0.2s ease, background-color 0.2s ease;
-}
 
-/* Closed fist cursor while holding */
-.custom-scrollbar.is-dragging,
-.custom-scrollbar.is-dragging .scrollbar-ball {
-  cursor: grabbing;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 /* Hides scrollbar on mobile */
@@ -207,10 +195,15 @@ html::-webkit-scrollbar {
   position: fixed;
   inset: 0;
   background-color: #111111;
+  width:100%;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
   z-index: 9999;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }

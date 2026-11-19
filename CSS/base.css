@@ -4,7 +4,9 @@ body {
 
 /* Rajdhani Font */
 body {
+  max-width: 100%;
   font-family: 'Rajdhani', sans-serif;
+  
 
 }
 
